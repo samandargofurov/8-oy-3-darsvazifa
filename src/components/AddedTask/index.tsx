@@ -1,9 +1,14 @@
+import React from 'react';
 import { useState } from "react";
 import { PiTrashSimpleFill } from "react-icons/pi";
 import { MdModeEditOutline } from "react-icons/md";
-import { Task } from "../types";
+import  Task  from './App';
 
-function AddedTask({ task }: { task: Task }) {
+interface Props {
+  task: Task
+}
+
+function AddedTask:React.FC<Props>({ task }: { task: Task }) {
   const { title, time, completed } = task;
   const [isChecked, setIsChecked] = useState(completed);
 
